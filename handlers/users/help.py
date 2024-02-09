@@ -1,10 +1,10 @@
 from aiogram import types
-from aiogram.dispatcher.filters.builtin import CommandHelp
+from aiogram.filters import Command
 
 from loader import dp
 
 
-@dp.message_handler(CommandHelp())
+@dp.message(Command('help'))
 async def bot_help(message: types.Message):
     text = ("Buyruqlar: ",
             "/start - Run the bot",

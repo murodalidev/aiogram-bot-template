@@ -3,9 +3,11 @@ import logging
 import sys
 from loader import dp, bot
 from utils.notify_admins import on_startup_notify
+from utils.set_bot_commands import set_default_commands
 
 
 async def main() -> None:
+    await set_default_commands()
     await on_startup_notify()
     await dp.start_polling(bot)
 
